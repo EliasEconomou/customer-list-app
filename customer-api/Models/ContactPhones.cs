@@ -9,10 +9,10 @@ namespace api.Models
         
         public int Id { get; set; }
         [Phone]
-        public int HomeNumber { get; set; }
+        public string HomeNumber { get; set; }
         [Phone]
-        public int WorkNumber { get; set; }
+        public string WorkNumber { get; set; }
         [Phone]
-        public int CellphoneNumber { get; set; }
+        public string CellphoneNumber { get; set; }
     }
 }
