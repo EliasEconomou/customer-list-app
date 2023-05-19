@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Congigure database
-builder.Services.AddDbContext<DataContext>(options =>
+builder.Services.AddDbContext<DataContext>((opt) =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
 // Add services to the container.

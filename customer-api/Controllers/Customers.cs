@@ -8,10 +8,10 @@ namespace customer_api.Controllers
     [Route("api/[controller]")]
     public class Customers : ControllerBase
     {
-        DataContext _DataContext;
-        Customers(DataContext dataContext)
-        {
-            _DataContext = dataContext;
-        }
+        //DataContext _DataContext;
+        //Customers(DataContext dataContext)
+        //{
+        //    _DataContext = dataContext;
+        //}
     }
 }
