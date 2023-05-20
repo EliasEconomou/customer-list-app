@@ -1,5 +1,7 @@
 <div>
     <ul>
-        <li *ngFor="let c of customers">{{c.name}}</li>
+        <li *ngFor="let c of customers">
+        <app-customer-item [customer]="c"></app-customer-item>
+        </li>
     </ul>
 </div>
