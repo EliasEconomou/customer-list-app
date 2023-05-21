@@ -11,15 +11,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerListComponent,
-    CustomerItemComponent
+    
   ],
   imports: [
+    CustomerListComponent,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

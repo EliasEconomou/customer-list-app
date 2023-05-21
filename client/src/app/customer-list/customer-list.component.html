@@ -1,7 +1,31 @@
-<div>
-    <ul>
-        <li *ngFor="let c of customers">
-        <app-customer-item [customer]="c"></app-customer-item>
-        </li>
-    </ul>
+
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Home Address</th>
+                <th scope="col">Email</th>
+                <th scope="col">Population</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let customer of customers;"> 
+            <tr *ngIf="deleteFlag == false">
+                <!-- <th scope="row">{{ i + 1 }}</th> -->
+                <td>
+                    <img (click)="onClickDelete(customer.id)"
+                        [src]="'https://upload.wikimedia.org/wikipedia/commons/'"
+                        class="me-2"
+                        style="width: 20px"
+                    />
+                    <ngb-highlight [result]="customer.name+' '+customer.surname"></ngb-highlight>
+                </td>
+                <td><ngb-highlight [result]="customer.homeAddress"></ngb-highlight></td>
+                <td><ngb-highlight [result]="customer.email"></ngb-highlight></td>
+            </tr>
+        </ng-container> 
+        </tbody>
+    </table>
 </div>
