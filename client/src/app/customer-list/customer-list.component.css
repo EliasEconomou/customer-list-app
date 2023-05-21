@@ -1,0 +1,21 @@
+
+.container {
+    margin-top: 100px;
+}
+
+.delImage{
+    cursor: pointer;
+    color: rgb(179, 36, 36);
+    font-size: 25px;
+}
+
+.addImage{
+    cursor: pointer;
+    color: rgb(43, 179, 36);
+    font-size: 22px;
+}
+
+.thIcon {
+    width: 0px; white-space: nowrap;
+    
+}

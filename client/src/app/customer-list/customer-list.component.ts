@@ -4,12 +4,13 @@ import { Customer } from '../_interfaces/Customer';
 import { NgFor } from '@angular/common';
 import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faRemove,faAdd } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-customer-list',
   standalone: true,
-  imports: [NgFor, CommonModule, NgbTypeaheadModule],
+  imports: [NgFor, CommonModule, NgbTypeaheadModule, FontAwesomeModule],
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.css']
 })
@@ -18,8 +19,10 @@ import { CommonModule } from '@angular/common';
 
 
 export class CustomerListComponent implements OnInit{
+
   customers: Customer[] = [];
-  deleteFlag: boolean = false;
+  delIcon = faRemove;
+  addIcon = faAdd;
   constructor(private customerService: CustomerService) {
   }
   
@@ -38,7 +41,6 @@ export class CustomerListComponent implements OnInit{
 
   onClickDelete(id: number): void {
     console.log("onClickDelete");
-    // this.deleteFlag = true
     this.customers = this.customers.filter((c) => c.id != id)
 
 

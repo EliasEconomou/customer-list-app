@@ -1,9 +1,10 @@
-
-
 <div class="container">
+    
     <table class="table table-striped">
         <thead>
             <tr>
+                <th class="thIcon"><fa-icon class="addImage" [icon]="addIcon">
+                </fa-icon></th>
                 <th scope="col">Name</th>
                 <th scope="col">Home Address</th>
                 <th scope="col">Email</th>
@@ -11,21 +12,17 @@
             </tr>
         </thead>
         <tbody>
-            <ng-container *ngFor="let customer of customers;"> 
-            <tr *ngIf="deleteFlag == false">
-                <!-- <th scope="row">{{ i + 1 }}</th> -->
+            <tr *ngFor="let customer of customers;">
+                <td class="thIcon">
+                    <fa-icon class="me-2 delImage" [icon]="delIcon" (click)="onClickDelete(customer.id)">
+                    </fa-icon>
+                </td>
                 <td>
-                    <img (click)="onClickDelete(customer.id)"
-                        [src]="'https://upload.wikimedia.org/wikipedia/commons/'"
-                        class="me-2"
-                        style="width: 20px"
-                    />
                     <ngb-highlight [result]="customer.name+' '+customer.surname"></ngb-highlight>
                 </td>
                 <td><ngb-highlight [result]="customer.homeAddress"></ngb-highlight></td>
                 <td><ngb-highlight [result]="customer.email"></ngb-highlight></td>
             </tr>
-        </ng-container> 
         </tbody>
     </table>
 </div>
