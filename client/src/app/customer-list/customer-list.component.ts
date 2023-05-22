@@ -58,6 +58,10 @@ export class CustomerListComponent implements OnInit{
     this.deleteCustomer(id);
   }
 
+  addNewCustomer(event: any) {
+    console.log("asd",event);
+    // todo
+  }
 
 }
 

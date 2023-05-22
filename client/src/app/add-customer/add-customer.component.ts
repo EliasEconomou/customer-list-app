@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -16,7 +16,9 @@ import { FormsModule } from '@angular/forms';
 export class AddCustomerComponent {
 	closeResult = '';
   addIcon = faAdd;
-  model: any = {}
+  customer: any = {}
+  @Output()
+  onAddCustomerEvent = new EventEmitter<any>();
 
 	constructor(private modalService: NgbModal) {}
 
@@ -46,7 +48,7 @@ export class AddCustomerComponent {
 	}
 
   onClickingAdd() {
-    console.log("add")
-    
+    // console.log(this.customer)
+    this.onAddCustomerEvent.emit(this.customer);
   }
 }

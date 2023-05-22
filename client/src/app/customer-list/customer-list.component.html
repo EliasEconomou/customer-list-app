@@ -5,7 +5,7 @@
             <tr>
                 <th class="colIcon">
                     <div>
-                        <app-add-customer></app-add-customer>
+                        <app-add-customer (onAddCustomerEvent)="addNewCustomer($event)"></app-add-customer>
                     </div>
                 </th>
                 <th scope="col">Name</th>

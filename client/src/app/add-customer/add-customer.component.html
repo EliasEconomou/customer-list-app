@@ -12,31 +12,38 @@
         <form (ngSubmit)="onClickingAdd()" #submitform="ngForm" autocomplete="off">
             <div style="float:left; margin-right: 20px; margin-bottom: 10px;">
                 <label for="name">Name: </label>
-                <input id="name" type="text" class="form-control me-2">
+                <input id="name" name="name" type="text" class="form-control me-2"
+                [(ngModel)]="customer.name">
             </div>
             <div style="float:left; margin-bottom: 10px;">
                 <label for="surname">Surname: </label>
-                <input id="surname" type="text" class="form-control me-2">
+                <input id="surname" name="surname" type="text" class="form-control me-2"
+                [(ngModel)]="customer.surname">
             </div>
             <div style="clear:both; margin-bottom: 10px;">
-                <label for="address">Address: </label>
-                <input id="address" type="text" class="form-control me-2">
+                <label for="homeaddress">Home Address: </label>
+                <input id="homeaddress" name="homeaddress" type="text" class="form-control me-2"
+                [(ngModel)]="customer.homeAddress">
             </div>
             <div style="margin-bottom: 10px;">
                 <label for="email">Email: </label>
-                <input id="email" type="text" class="form-control me-2">
+                <input id="email" name="email" type="text" class="form-control me-2"
+                [(ngModel)]="customer.email">
             </div>
             <div style="float:left; margin-right: 10px; width: 140px;">
                 <label for="homenumber">Home Number: </label>
-                <input id="homenumber" type="text" class="form-control me-2">
+                <input id="homenumber" name="homenumber" type="text" class="form-control me-2"
+                [(ngModel)]="customer.homeNumber">
             </div>
             <div style="float:left; margin-right: 10px; width: 140px;">
                 <label for="worknumber">Work Number: </label>
-                <input id="worknumber" type="text" class="form-control me-2">
+                <input id="worknumber" name="worknumber" type="text" class="form-control me-2"
+                [(ngModel)]="customer.workNumber">
             </div>
             <div style="float:left; width: 140px; margin-bottom: 20px;">
                 <label for="cellphonenumber">Cellphone Number: </label>
-                <input id="cellphonenumber" type="text" class="form-control me-2">
+                <input id="cellphonenumber" name="cellphonenumber" type="text" class="form-control me-2"
+                [(ngModel)]="customer.cellphoneNumber">
             </div>
             <div class="modal-footer" style="clear:both; margin-bottom: 0px;">
                 <div style="margin-top: 20px;">
