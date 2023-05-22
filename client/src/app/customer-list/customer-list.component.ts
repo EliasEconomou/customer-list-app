@@ -6,11 +6,12 @@ import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faRemove, faAdd, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { ContactPhonesComponent } from '../contact-phones/contact-phones.component';
 
 @Component({
   selector: 'app-customer-list',
   standalone: true,
-  imports: [NgFor, CommonModule, NgbTypeaheadModule, FontAwesomeModule],
+  imports: [NgFor, CommonModule, NgbTypeaheadModule, FontAwesomeModule, ContactPhonesComponent],
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.css']
 })

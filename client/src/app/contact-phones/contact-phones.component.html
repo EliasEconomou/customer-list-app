@@ -1,0 +1,18 @@
+<ng-template #popContent>
+    <div>
+        <ul>
+            <li><b>Home: {{homeNumber}}</b></li>
+            <li><b>Work: {{workNumber}}</b></li>
+            <li><b>Cellphone: {{cellphoneNumber}}</b></li>
+        </ul>
+    </div>
+</ng-template>
+
+<button 
+    type="button" 
+    class="btn" 
+    [ngbPopover]="popContent" 
+    triggers="mouseenter:mouseleave"
+    popoverTitle="Contact Phones">
+    <fa-icon class="me-2 contactImage" [icon]="contactIcon"></fa-icon>
+</button>
