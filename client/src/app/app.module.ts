@@ -8,13 +8,14 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ContactPhonesComponent } from './contact-phones/contact-phones.component';
+import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    
+    AppComponent,    
   ],
   imports: [
+    ConfirmDeleteComponent,
     ContactPhonesComponent,
     CustomerListComponent,
     BrowserModule,
@@ -23,7 +24,7 @@ import { ContactPhonesComponent } from './contact-phones/contact-phones.componen
     NgbModule,
     FontAwesomeModule
   ],
-  
+  // exports: [ConfirmDeleteComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

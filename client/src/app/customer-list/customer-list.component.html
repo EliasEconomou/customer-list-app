@@ -13,9 +13,12 @@
         </thead>
         <tbody>
             <tr *ngFor="let customer of customers;">
-                <td class="colIcon">
-                    <fa-icon class="me-2 delImage" [icon]="delIcon" (click)="onClickDelete(customer.id)">
-                    </fa-icon>
+                <td>
+                    <div>
+                        <!-- <fa-icon class="me-2 delImage" [icon]="delIcon" (click)="onClickDelete(customer.id)">
+                        </fa-icon> -->
+                        <app-confirm-delete [customerFullname]="customer.name+' '+customer.surname" (okEvent)="onDelete(customer.id)"></app-confirm-delete>
+                    </div>
                 </td>
                 <td>
                     <ngb-highlight [result]="customer.name+' '+customer.surname"></ngb-highlight>

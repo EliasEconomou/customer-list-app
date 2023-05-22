@@ -7,11 +7,12 @@ import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faRemove, faAdd, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { ContactPhonesComponent } from '../contact-phones/contact-phones.component';
+import { ConfirmDeleteComponent } from '../confirm-delete/confirm-delete.component'
 
 @Component({
   selector: 'app-customer-list',
   standalone: true,
-  imports: [NgFor, CommonModule, NgbTypeaheadModule, FontAwesomeModule, ContactPhonesComponent],
+  imports: [NgFor, CommonModule, NgbTypeaheadModule, FontAwesomeModule, ContactPhonesComponent, ConfirmDeleteComponent],
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.css']
 })
@@ -49,7 +50,7 @@ export class CustomerListComponent implements OnInit{
     })
   }
 
-  onClickDelete(id: number): void {
+  onDelete(id: number): void {
     console.log("onClickDelete");
     this.customers = this.customers.filter((c) => c.id != id);
     this.deleteCustomer(id);

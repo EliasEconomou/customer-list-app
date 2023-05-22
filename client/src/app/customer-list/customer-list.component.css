@@ -3,12 +3,6 @@
     margin-top: 100px;
 }
 
-.delImage{
-    cursor: pointer;
-    color: rgb(179, 36, 36);
-    font-size: 25px;
-}
-
 .addImage{
     cursor: pointer;
     color: rgb(43, 179, 36);
