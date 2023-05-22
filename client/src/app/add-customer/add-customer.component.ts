@@ -1,24 +1,28 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faRemove } from '@fortawesome/free-solid-svg-icons';
+import { faAdd } from '@fortawesome/free-solid-svg-icons';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-	selector: 'app-confirm-delete',
-	standalone: true,
-	imports: [FontAwesomeModule],
-	templateUrl: './confirm-delete.component.html',
-	styleUrls: ['./confirm-delete.component.css']
+  selector: 'app-add-customer',
+  standalone: true,
+  imports: [CommonModule, FontAwesomeModule, FormsModule],
+  templateUrl: './add-customer.component.html',
+  styleUrls: ['./add-customer.component.css']
 })
-export class ConfirmDeleteComponent {
+
+export class AddCustomerComponent {
 	closeResult = '';
-  deleteIcon = faRemove;
-  @Output()
-  okEvent: EventEmitter<any> = new EventEmitter();
-  @Input()
-  customerFullname = '';
+  addIcon = faAdd;
+  model: any = {}
 
 	constructor(private modalService: NgbModal) {}
+
+  openLg(content: any) {
+		this.modalService.open(content, { size: 'lg' });
+	}
 
 	open(content: any) {
 		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
@@ -41,8 +45,8 @@ export class ConfirmDeleteComponent {
 		}
 	}
 
-  onClickingOk() {
-    console.log("ok")
-    this.okEvent.emit();
+  onClickingAdd() {
+    console.log("add")
+    
   }
 }
