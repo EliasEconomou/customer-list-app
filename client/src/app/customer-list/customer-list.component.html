@@ -3,17 +3,17 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th class="thIcon"><fa-icon class="addImage" [icon]="addIcon">
+                <th class="colIcon"><fa-icon class="addImage" [icon]="addIcon">
                 </fa-icon></th>
                 <th scope="col">Name</th>
                 <th scope="col">Home Address</th>
                 <th scope="col">Email</th>
-                <th scope="col">Population</th>
+                <th scope="col">Contact</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let customer of customers;">
-                <td class="thIcon">
+                <td class="colIcon">
                     <fa-icon class="me-2 delImage" [icon]="delIcon" (click)="onClickDelete(customer.id)">
                     </fa-icon>
                 </td>
@@ -22,6 +22,18 @@
                 </td>
                 <td><ngb-highlight [result]="customer.homeAddress"></ngb-highlight></td>
                 <td><ngb-highlight [result]="customer.email"></ngb-highlight></td>
+                <td>
+                    <div>
+                        <button
+                        type="button"
+                        class="btn"
+                        ngbPopover="You see, I show up on hover!"
+                        triggers="mouseenter:mouseleave"
+                        popoverTitle="Contact Phones">
+                        <fa-icon class="me-2 contactImage" [icon]="contactIcon"></fa-icon>
+                        </button>
+                    </div>  
+                </td>
             </tr>
         </tbody>
     </table>

@@ -7,11 +7,15 @@ import { Customer } from '../_interfaces/Customer'
   providedIn: 'root'
 })
 export class CustomerService {
-  private baseApiUrl: string = "https://localhost:7023/api/Customers"
+  private baseApiUrl: string = "https://localhost:7023/api/Customers/"
   constructor(private http: HttpClient) { }
 
   getCustomers(): Observable<Customer[]> {
     return this.http.get<Customer[]>(this.baseApiUrl)
+  }
+
+  deleteCustomer(id: number): Observable<number> {
+    return this.http.delete<number>(this.baseApiUrl+'delete/'+id)
   }
 
 

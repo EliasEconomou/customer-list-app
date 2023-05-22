@@ -70,7 +70,7 @@ namespace customer_api.Controllers
             return Ok("Customer object created successfully");
         }
 
-        [HttpDelete("delete{id}")]
+        [HttpDelete("delete/{id}")]
         public async Task<ActionResult> DeleteCustomer(int id)
         {
             Customer customer = await _DataContext.Customers.Include(c => c.ContactPhones).SingleOrDefaultAsync(c => c.Id == id);
@@ -84,7 +84,7 @@ namespace customer_api.Controllers
             _DataContext.Customers.Remove(customer);
             _DataContext.ContactPhones.Remove(contactPhones);
             await _DataContext.SaveChangesAsync();
-            return Ok();
+            return Ok(id);
         }
 
     }

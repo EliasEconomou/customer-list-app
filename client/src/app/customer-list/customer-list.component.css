@@ -15,7 +15,18 @@
     font-size: 22px;
 }
 
-.thIcon {
+.colIcon {
     width: 0px; white-space: nowrap;
     
+}
+
+.contactImage {
+    cursor: pointer;
+    color: rgb(54, 180, 218);
+    font-size: 20px;
+}
+
+th,td {
+    text-align: center;
+    vertical-align: middle;
 }

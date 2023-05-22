@@ -5,7 +5,7 @@ import { NgFor } from '@angular/common';
 import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faRemove,faAdd } from '@fortawesome/free-solid-svg-icons';
+import { faRemove, faAdd, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-customer-list',
@@ -23,6 +23,7 @@ export class CustomerListComponent implements OnInit{
   customers: Customer[] = [];
   delIcon = faRemove;
   addIcon = faAdd;
+  contactIcon = faPhone;
   constructor(private customerService: CustomerService) {
   }
   
@@ -39,11 +40,18 @@ export class CustomerListComponent implements OnInit{
     })
   }
 
+  deleteCustomer(id: number): void {
+    this.customerService.deleteCustomer(id).subscribe({
+      next: (response) => console.log('Response from delete:',response),
+      error: (er) => console.log(er),
+      complete: () => console.log('Customer with id =',id,'deleted')
+    })
+  }
+
   onClickDelete(id: number): void {
     console.log("onClickDelete");
-    this.customers = this.customers.filter((c) => c.id != id)
-
-
+    this.customers = this.customers.filter((c) => c.id != id);
+    this.deleteCustomer(id);
   }
 
 
