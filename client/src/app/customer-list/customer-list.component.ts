@@ -58,9 +58,9 @@ export class CustomerListComponent implements OnInit{
     this.deleteCustomer(id);
   }
 
-  addNewCustomer(event: any) {
+  addNewCustomer(event: Customer) {
     console.log("asd",event);
-    // todo
+    this.customers.push(event);
   }
 
 }
